@@ -20,12 +20,7 @@ def bmi_calculator():
     bmi = round(bmi, 3)
 
     # Print BMI
-    print(f'Your BMI is: {bmi}')
-
-    # Mifflin Equation to calculate BMR for males and females
-    # BMR_M = (10 * user_weight) + (6.25 * (user_height * 100)) - (5 * A) + 5
-    # print(f'Your BMR (Mifflin Equation) is: {BMR_M}')
-
+    print(f'Your BMI is: {bmi} kg/m^2')
 
 def bmi_rating():
     if bmi < 18.5:
@@ -37,14 +32,15 @@ def bmi_rating():
     else:
         print('You are Obese')
 
+# Calories burned whiles at rest
 def bmr():
     gender = input('Are you a F or M : ')
     BMR_M = (10 * user_weight) + (6.25 * (user_height * 100)) - (5 * A) + 5
-    #print(f'Your BMR (Mifflin Equation) is: {BMR_M}')
+    BMR_W = (10 * user_weight) + (6.25 * (user_height * 100)) - (5 * A) - 161
     if gender == 'M':
-        print(BMR_M)
-    else:
-        print('Working on it ')
+        print('You will burn {} calories when resting '.format(BMR_M))
+    elif gender == 'F':
+        print('You will burn {} calories when resting '.format(BMR_W))
 
 bmi_calculator()
 bmi_rating()
